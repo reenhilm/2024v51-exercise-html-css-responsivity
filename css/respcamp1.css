@@ -1,0 +1,69 @@
+.border {
+    outline: 2px solid black;
+}
+
+header,
+section,
+main,
+aside,
+footer {
+    min-width: 100px;
+    min-height: 30px;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+header {
+    background-color: #480063;
+}
+
+section {
+    background-color: #b2008a;
+}
+
+aside {
+    background-color: #fd96a9;
+}
+
+footer {
+    background-color: #c1c99a;
+}
+
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: 200px 1fr 200px;
+    }
+
+    .container>header {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .container>section:nth-child(1),
+    .container>section:nth-child(2),
+    .container>section:nth-child(3),
+    .container>section:nth-child(4),
+    .container>section:nth-child(5) {
+        grid-column-start: 1;
+    }
+
+    .container>main {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-row-end: 7;
+    }
+
+    .container>aside {
+        grid-column-start: 3;
+        grid-row-start: 2;
+        grid-row-end: 7;
+    }
+
+    .container>footer {
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+}
