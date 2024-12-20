@@ -8,13 +8,13 @@ body {
 
 section,
 footer {
-    min-width: 100px;
     min-height: 30px;
 }
 
 .container {
     display: grid;
     gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .ball {
@@ -41,21 +41,15 @@ footer {
     background-color: #c1c99a;
 }
 
-.experimentwrapper {
-    display: contents;
+.header1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column: span 3;
+    display: flex;
 }
 
 @media (width < 600px) {
     .container {
-        grid-template-columns: repeat(3, 1fr);
-
-        .header1 {
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-column: span 3;
-            display: flex;
-        }
-
         .ball {
             margin: auto auto;
         }
@@ -69,15 +63,6 @@ footer {
 
 @media (width >= 600px) {
     .container {
-            grid-template-columns: repeat(3, 1fr);
-
-        .header1 {
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-column: span 3;
-            display: flex;
-        }
-
         .section1,
         .section2 {
             grid-row-start: 3;
@@ -102,13 +87,12 @@ footer {
         }
 
         .lastsections1, .lastsections2, .lastsections3 {
-            /* grid-column-start: 3; */
-            grid-row: span 2;
+            grid-row-start: span 2;
         }
 
         footer {
             grid-column-start: 1;
-            grid-column: span 3;
+            grid-column-end: span 3;
         }
     }
 }

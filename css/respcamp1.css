@@ -12,7 +12,6 @@ section,
 main,
 aside,
 footer {
-    min-width: 100px;
     min-height: 30px;
 }
 
