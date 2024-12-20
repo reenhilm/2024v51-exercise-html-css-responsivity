@@ -1,3 +1,8 @@
+body
+{
+    margin: 10px 10px;
+}
+
 .border {
     outline: 2px solid black;
 }

@@ -1,3 +1,7 @@
+body {
+    margin: 10px 10px;
+}
+
 .border {
     outline: 2px solid black;
 }
@@ -13,12 +17,24 @@ footer {
     gap: 10px;
 }
 
-.container>section:nth-child(-n + 4) {
-    background-color: #b2008a;
+.ball {
+    background-color: #480063;
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
 }
 
-section {
+.navlink1, .navlink2, .navlink3 {
+    background-color: #b2008a;
+    border-radius: 20px;
+}
+
+.section1, .section2, .section3, .section4 {
     background-color: #fd96a9;
+}
+
+.lastsections1, .lastsections2, .lastsections3 {
+    background-color: #b2008a;
 }
 
 footer {
@@ -31,113 +47,68 @@ footer {
 
 @media (width < 600px) {
     .container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
         .header1 {
             grid-row-start: 1;
             grid-column-start: 1;
-            grid-column: span 1;
+            grid-column: span 3;
+            display: flex;
         }
 
-        .header2 {
-            grid-row-start: 1;
-            grid-column-start: 2;
-            grid-column: span 1;
+        .ball {
+            margin: auto auto;
         }
 
-        .header3 {
-            grid-row-start: 2;
-            grid-column-start: 1;
-            grid-column: span 1;
-        }
-
-        .header4 {
-            grid-row-start: 2;
-            grid-column-start: 2;
-            grid-column: span 1;
-        }
-
-        .main1 {
-            grid-column: span 2;
-            /* grid-row-start: 3; */
-        }
-
-        .main2 {
-            grid-column: span 2;
-            /* grid-row-start: 4; */
-        }
-
-        .main3 {
-            grid-column: span 2;
-            /* grid-row-start: 5; */
-        }
-
-        footer {
-            grid-column: span 2;
-            /* grid-row-start: 6; */
+        .navlink1, .navlink2, .navlink3,
+        .section1, .section2, .section3, .section4, footer {
+            grid-column: span 3;
         }
     }
 }
 
 @media (width >= 600px) {
-
-    /* body {
-        background-color: gray;
-    }     */
     .container {
-        grid-template-columns: repeat(12, 60px);
-    }
+            grid-template-columns: repeat(3, 1fr);
 
-    .header1 {
-        grid-row-start: 1;
-        grid-column: span 3;
-        /* grid-column-end: 4; */
-    }
+        .header1 {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column: span 3;
+            display: flex;
+        }
 
-    .header2 {
-        grid-row-start: 1;
-        grid-column: span 3;
-        /* grid-column-start: 4;
-        grid-column-end: 7; */
-    }
+        .section1,
+        .section2 {
+            grid-row-start: 3;
+            grid-row-end: 6;
+        }
 
-    .header3 {
-        grid-row-start: 1;
-        grid-column: span 3;
-        /* grid-column-start: 7;
-        grid-column-end: 10; */
-    }
+        .section3, .section4 {
+            grid-row-start: 6;
+            grid-row-end: 9;
+        }
 
-    .header4 {
-        grid-row-start: 1;
-        grid-column: span 3;
-        /* grid-column-start: 10;
-        grid-column-end: 13; */
-    }
+        .lastsections1 {
+            grid-row-start: 2;
+        }
 
-    .main1 {
-        /* grid-column-start: 1;
-        grid-column-end: 5; */
-        grid-row-start: 2;
-        grid-column: span 4;
-    }
+        .lastsections2 {
+            grid-row-start: 4;
+        }
 
-    .main2 {
-        /* grid-column-start: 5;
-        grid-column-end: 9; */
-        grid-row-start: 2;
-        grid-column: span 4;
-    }
+        .lastsections3 {
+            grid-row-start: 6;
+        }
 
-    .main3 {
-        /* grid-column-start: 9;
-        grid-column-end: 13; */
-        grid-row-start: 2;
-        grid-column: span 4;
-    }
+        .lastsections1, .lastsections2, .lastsections3 {
+            /* grid-column-start: 3; */
+            grid-row: span 2;
+        }
 
-    .container>footer {
-        /* grid-column-start: 1; */
-        grid-column: span 12;
-        grid-row-start: 3;
+        footer {
+            grid-column-start: 1;
+            grid-column: span 3;
+        }
     }
 }
